@@ -1,0 +1,22 @@
+
+<div class="container1">
+        <div style="margin-left: 10%;"><img alt="cherry-can" src="r.jpeg" style="width: 20%;">Teddy_£2.99<button onclick="addToCart('Cherry', 2.99)"><span Class="englishLangClass">Buy</span></button></div>
+        <div><img alt="guava-can" src="image.jpeg" style="width: 20%;">Digger_£2.99<button onclick="addToCart('Guava', 2.99)"><span Class="englishLangClass">Buy</span></button></div>
+        
+        <!--Random function activated using javaScript (picks one of five cans at random)-->
+        <div style="margin-left: 10%;"><img alt="random" src="images/luckydraw.png" style="width: 300%;">RANDOM_£2.99<button onclick="addToCart(PickCan(), 2.99)"><span Class="englishLangClass">Buy</span></button></div>
+    </div>
+    <br>
+    <!--Cart section-->
+    <hr>
+    <div class="cart" style="text-align: center;">
+      <h2 class="englishLangClass" style="margin-left: 1%; text-decoration: underline;"><img alt="cart" src="images/cart.png" style="width: 60px; margin-right: 10px;">Cart</h2>
+      <h2 class="frenchLangClass" style="margin-left: 1%; text-decoration: underline;"><img alt="cart" src="images/cart.png" style="width: 60px; margin-right: 10px;">Chariot</h2>
+      <ul style="list-style-type: none;" id="cartItems">
+          <!-- Cart items are displayed here -->
+      </ul>
+      <!--Cart total + checkout button in french and english (button activates javaScript function)-->
+      <p>Total: £<span id="cartTotal">0.00</span></p>
+      <button style="margin-left: auto; margin-right: auto;" class="englishLangClass" onclick="checkout()">Checkout</button>
+      <button style="margin-left: auto; margin-right: auto;" class="frenchLangClass" onclick="checkout()">Vérifier</button>
+  </div>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trustworthy shop</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      font-family: Arial, sans-serif;
+      position: relative; /* Position relative to contain absolute positioned elements */
+    }
+
+    h1 {
+      font-size: 48px;
+      text-align: center;
+      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px black;
+    }
+
+    p {
+      font-size: 16px;
+      text-align: center;
+      color: black;
+      letter-spacing: -2px; /* Squashing the letters */
+    }
+
+    /* Styles for the image container */
+    #imageContainer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Ensure clicks pass through to underlying elements */
+      z-index: 999; /* Ensure images appear on top of other content */
+    }
+
+    /* Styles for individual images */
+    .imageWrapper {
+      position: absolute;
+      width: 150px; /* Adjust the width of the image */
+    }
+
+    /* Styles for the delete button */
+    .deleteButton {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      cursor: pointer;
+    }
+
+    /* Style for the clear all button */
+    #clearAllButton {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      cursor: pointer;
+      background-color: white;
+      padding: 5px 10px;
+      border: 1px solid black;
+    }
+
+    .buy {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      transition: top 0.5s, left 0.5s; /* Adding transition */
+    }
+    
+    .buy:hover {
+      top: 50px; /* Adjust as needed */
+      left: 50px; /* Adjust as needed */
+    }
+    
+
+    /* Animation for spinning images */
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .spin-animation {
+      animation: spin 1s linear infinite;
+    }
+
+  </style>
+
+
+
+</head>
+<body>
+  <div id="imageContainer">
+    <!-- Images will be dynamically added here -->
+  </div>
+  
+<div class="container1">
+  <div style="margin-left: 10%;"><img alt="cherry-can" src="r.jpeg" style="width: 30%;">Teddy £2.99<button style="width: 120px; height: 70px;" onclick="playAudio() , openLink('https://unadshub.com/uCq5rDDjwLvTNKT70Gc-JaxhjqdZzbi0akgMjCDKnRY/?clck=6602a19f660c680001665776&sid=10_3744083-3998701641-0')"><span Class="englishLangClass">Buy</span></button></div>
+  <div><img alt="guava-can" src="image.jpeg" style="width: 30%;">Digger £2.99<button style="width: 120px; height: 70px;" onclick="playAudio(), openLink('https://unadshub.com/uCq5rDDjwLvTNKT70Gc-JaxhjqdZzbi0akgMjCDKnRY/?clck=6602a19f660c680001665776&sid=10_3744083-3998701641-0')"><span Class="englishLangClass">Buy</span></button></div>
+</div>
+  <div>
+
+    
+    <button id="clearAllButton" onclick="clearAllImages()">Clear All Ads</button> <!-- Button for clearing all images -->
+    
+
+    </audio>
+    <img src="4.png" width="150px" onclick="openLink('https://unadshub.com/uCq5rDDjwLvTNKT70Gc-JaxhjqdZzbi0akgMjCDKnRY/?clck=6602a19f660c680001665776&sid=10_3744083-3998701641-0')" class="spin-animation"> <!-- Adjust the width of the image -->
+    <img src="11.png" width="150px" onclick="openLink('https://unadshub.com/uCq5rDDjwLvTNKT70Gc-JaxhjqdZzbi0akgMjCDKnRY/?clck=6602a19f660c680001665776&sid=10_3744083-3998701641-0')" class="spin-animation"> <!-- Adjust the width of the image -->
+    <img src="8.png" width="150px" onclick="openLink('https://unadshub.com/uCq5rDDjwLvTNKT70Gc-JaxhjqdZzbi0akgMjCDKnRY/?clck=6602a19f660c680001665776&sid=10_3744083-3998701641-0')" class="spin-animation"> <!-- Adjust the width of the image -->
+    <img src="6.png" width="150px" onclick="openLink('https://unadshub.com/uCq5rDDjwLvTNKT70Gc-JaxhjqdZzbi0akgMjCDKnRY/?clck=6602a19f660c680001665776&sid=10_3744083-3998701641-0')" class="spin-animation"> <!-- Adjust the width of the image -->
+    <img src="2.png" width="150px" onclick="openLink('https://unadshub.com/uCq5rDDjwLvTNKT70Gc-JaxhjqdZzbi0akgMjCDKnRY/?clck=6602a19f660c680001665776&sid=10_3744083-3998701641-0')" class="spin-animation"> <!-- Adjust the width of the image -->
+
+    
+
+
+    
+    
+
+   </div>
+   
+   
+
+  <script>
+
+
+    // Function to play the audio
+    function playAudio() {
+      const audio = new Audio('carhorn.mp3'); // Change 'carhorn.mp3' to the path of your audio file
+      audio.playbackRate = 2; // Adjust the playback rate to make it play faster
+      
+      // Function to play audio multiple times
+      function playMultipleTimes(times) {
+        let count = 0;
+        const playInterval = setInterval(() => {
+          audio.play();
+          count++;
+          if (count === times) {
+            clearInterval(playInterval);
+          }
+        }, audio.duration * 1000); // Using audio duration to ensure the next play starts after the current audio finishes
+      }
+    
+      playMultipleTimes(5); // Play the audio 5 times
+    }
+    
+    // Call the function to play the audio
+    playAudio();
+
+
+
+    // Function to add an image to the container
+    function addImage(imageUrl) {
+      const imageWrapper = document.createElement('div');
+      imageWrapper.classList.add('imageWrapper');
+
+      const image = document.createElement('img');
+      image.src = imageUrl;
+
+      const deleteButton = document.createElement('span');
+      deleteButton.innerHTML = '❌';
+      deleteButton.classList.add('deleteButton');
+      deleteButton.onclick = function() {
+        imageWrapper.remove();
+        // Add a new image when deleting the current one
+        addImage('3.png'); // Replace '3.png' with the next image in sequence
+        addImage('4.png');
+        addImage('6.png');
+      };
+
+      // Calculate random position
+      const maxX = window.innerWidth - 150; // Adjust 150 to the image width
+      const maxY = window.innerHeight - 150; // Adjust 150 to the image height
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      // Set position
+      imageWrapper.style.left = randomX + 'px';
+      imageWrapper.style.top = randomY + 'px';
+
+      imageWrapper.appendChild(image);
+      imageWrapper.appendChild(deleteButton);
+
+      document.getElementById('imageContainer').appendChild(imageWrapper);
+
+      // Enable pointer events for the image and delete button
+      image.style.pointerEvents = 'auto';
+      deleteButton.style.pointerEvents = 'auto';
+
+      // Add event listener to prevent propagation when image is clicked
+      image.addEventListener('click', function(event) {
+        event.stopPropagation();
+      });
+
+      // Add event listener to prevent propagation when delete button is clicked
+      deleteButton.addEventListener('click', function(event) {
+        event.stopPropagation();
+      });
+    }
+
+    // Add initial images
+    addImage('4.png');
+    addImage('2.png');
+    addImage('2.png');
+    addImage('7.png');
+    addImage('8.png');
+    addImage('3.png');
+    addImage('11.png');
+
+    // Function to open a new window with the provided URL
+    function openLink(url) {
+      window.open(url, '_blank');
+    }
+
+    // Function to clear all images
+    function clearAllImages() {
+      // Remove the cancel button by using a custom dialog
+      const sureLevel = prompt("How sure are you? (Enter a percentage)");
+      if (sureLevel && sureLevel.trim() === "88") {
+        alert(`You are ${sureLevel}% sure.`);
+        // Clear all images here
+        const imageContainer = document.getElementById('imageContainer');
+        imageContainer.innerHTML = ''; // Remove all child elements
+      } else if (sureLevel) {
+        alert("Wrong!");
+
+        // Create and add the "YOU WERE HACKED BY JARVIS" text box
+        const textBox = document.createElement('input');
+        textBox.type = 'text';
+        textBox.value = 'JARVIS Hacked You';
+        textBox.style.fontSize = '50px'; // Adjust font size
+        textBox.style.position = 'absolute';
+        textBox.style.top = '50%';
+        textBox.style.left = '50%';
+        textBox.style.transform = 'translate(-50%, -50%)';
+        textBox.style.backgroundColor = 'white';
+        textBox.style.padding = '70px'; // Adjust padding
+        textBox.style.border = '2px solid black';
+        textBox.style.zIndex = '1000';
+        document.body.appendChild(textBox);
+
+        // After 2 seconds, remove the text box and add the images
+        setTimeout(function() {
+          document.body.removeChild(textBox);
+          // Prompt for a number between 1 and 100
+          const numImages = prompt("Enter a number between 1 and 100:");
+          const num = parseInt(numImages);
+
+          if (num >= 1 && num <= 100) {
+            if (num === 100) {
+              // Add only one image
+              addImage('3.png'); // Adding a random image, adjust as needed
+            } else {
+              // Add 50 images
+              for (let i = 0; i < 2500; i++) {
+                addImage('11.png'); // Adding random image, adjust as needed
+                addImage('2.png');
+                addImage('8.png');
+                addImage('4.png');
+                addImage('3.png');
+                addImage('6.png');
+                addImage('9.png');
+              }
+            }
+          } else {
+            alert("Invalid input. Please enter a number between 1 and 100.");
+          }
+        }, 2000);
+      }
+    }
+
+    
+    // Delay function
+    function delay(time) {
+      return new Promise((resolve) => setTimeout(resolve, time));
+    }
+
+    // Function to show the video
+    function showVideo() {
+      var element = document.getElementById('video');
+      var button = document.getElementById('button');
+      element.style.display = 'block';
+      button.style.display = 'none';
+      delay(100).then(() => toggleMute());
+    }
+  </script>
+</body>
+</html>
